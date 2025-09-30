@@ -18,6 +18,10 @@ Menerapkan **packages**, memisahkan class sesuai fungsinya:
 * **model** → menyimpan struktur data pemesanan. `Booking` menjadi **superclass** yang menampung atribut umum (nama, tanggal, jam). `Reservasi` dan `ReservasiTurnamen` adalah **subclass** yang mewarisi `Booking` dan menambahkan data khusus seperti lapangan atau nama tim.
 * **service** → menyimpan logika bisnis **CRUD** (`Service`) untuk menambah, menampilkan, mengubah, dan menghapus data reservasi.
 
+Abstraction diterapkan pada **Model/Booking.java** dengan menjadikan `Booking` sebagai **abstract class** dan menambahkan method abstract `getDetail()`, sehingga subclass **Reservasi** dan **ReservasiTurnamen** wajib membuat detailnya sendiri.
+
+Polymorphism terlihat di **Service/Service.java** melalui **overloading** method `tambahReservasi()` yang memiliki beberapa versi parameter, serta di **Reservasi** dan **ReservasiTurnamen** lewat **overriding** method `getDetail()` dan `toString()` untuk menampilkan informasi berbeda sesuai jenis reservasi meski disimpan sebagai tipe `Booking`.
+
 ## Penjelasan Output
 Menu
 
